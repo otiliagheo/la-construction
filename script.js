@@ -1,9 +1,9 @@
-/* L&A Construction — easy-to-edit site settings.
-   Add actual business contact details before publishing. Never use a fake address. */
+/* L&A Construction contact — Lea Sanciuc is the point of contact.
+   These details appear in her publicly listed real estate contact information. */
 const LA_SITE = {
-  businessEmail: '',  // e.g. 'hello@your-real-domain.com'
-  businessPhone: '',  // e.g. '(000) 000-0000'
-  serviceArea: ''      // e.g. 'City and surrounding areas'
+  businessEmail: 'leahsanciuc@yahoo.com',
+  businessPhone: '(210) 294-3913',
+  serviceArea: ''
 };
 
 const navToggle = document.querySelector('.nav-toggle');
@@ -51,7 +51,12 @@ if (displayEmail && LA_SITE.businessEmail) {
   a.textContent = LA_SITE.businessEmail;
   displayEmail.replaceChildren(a);
 }
-if (displayPhone && LA_SITE.businessPhone) displayPhone.textContent = LA_SITE.businessPhone;
+if (displayPhone && LA_SITE.businessPhone) {
+  const a = document.createElement('a');
+  a.href = 'tel:' + LA_SITE.businessPhone.replace(/[^+\d]/g, '');
+  a.textContent = LA_SITE.businessPhone;
+  displayPhone.replaceChildren(a);
+}
 if (displayLocation && LA_SITE.serviceArea) displayLocation.textContent = LA_SITE.serviceArea;
 
 const form = document.getElementById('inquiry-form');
@@ -61,7 +66,7 @@ if (form) {
     const feedback = document.getElementById('form-feedback');
     if (!form.reportValidity()) return;
     if (!LA_SITE.businessEmail) {
-      feedback.textContent = 'This is a website preview. Add the real L&A business email in script.js to activate inquiries before publishing.';
+      feedback.textContent = 'A contact email has not been configured. Please use the phone number listed above.';
       return;
     }
     const data = new FormData(form);
@@ -72,7 +77,7 @@ if (form) {
     const subject = `L&A Construction inquiry: ${interest}`;
     const body = `Name: ${name}\nEmail: ${email}\nProject: ${interest}\n\n${message}`;
     const mailto = `mailto:${LA_SITE.businessEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    feedback.textContent = 'Opening your email application. Review the message and press Send there; the website itself does not send emails.';
+    feedback.textContent = 'Opening your email application with a message addressed to Lea Sanciuc. Review the message and press Send in your email app.';
     window.location.href = mailto;
   });
 }
