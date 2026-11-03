@@ -57,3 +57,16 @@
 .projects-page .gallery-count{letter-spacing:.07em}
 .about-page .agent-detail{font-size:14px!important;line-height:1.75!important;color:#45433f!important;margin:0 0 25px!important}
 .about-page .agent-detail a{display:inline-block;border-bottom:1px solid #8c7860;padding-bottom:2px;margin-top:9px;font-weight:700}
+
+/* Builder-first business model and buyer options */
+.business-model{background:#e5dfd5}
+.model-grid,.buyer-options-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(40px,7vw,120px);padding-top:60px;align-items:start}
+.model-grid h2,.buyer-options-grid h2{font:800 clamp(52px,6vw,100px)/1.05 var(--title);letter-spacing:-.065em;margin:0 0 28px}
+.model-grid h2 em,.buyer-options-grid h2 em{font-style:normal;color:#a38a6a}
+.model-grid p,.buyer-options-grid p{max-width:565px;font-size:16px;line-height:1.75;color:#4d4d47;margin:0 0 28px}
+.model-side{padding-top:13px;border-top:1px solid #aaa299}
+.model-side h3,.buyer-options-grid h3{font-size:clamp(18px,2vw,28px);font-weight:800;letter-spacing:-.04em;margin:0 0 18px}
+.buyer-options{background:#e9e4db;scroll-margin-top:30px}
+.buyer-options-grid>div:last-child{border-top:1px solid #b9b3a9;padding-top:22px}
+.buyer-options-grid h3:not(:first-child){margin-top:30px}
+@media(max-width:680px){.model-grid,.buyer-options-grid{grid-template-columns:1fr;gap:22px;padding-top:45px}.model-grid h2,.buyer-options-grid h2{font-size:clamp(53px,12vw,76px)}}
