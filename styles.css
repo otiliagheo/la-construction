@@ -50,3 +50,10 @@
 .about-page .person-card h3{font-size:clamp(43px,10vw,64px)}
 .about-page .page-hero h1{font-size:clamp(58px,12vw,80px)}
 }
+
+/* Verified project cards and agent information */
+.projects-page .property-link{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid currentColor;padding:12px 0 4px;margin-top:6px;color:#544b41}
+.projects-page .gallery-details h2{font-size:clamp(23px,2.7vw,37px);overflow-wrap:anywhere}
+.projects-page .gallery-count{letter-spacing:.07em}
+.about-page .agent-detail{font-size:14px!important;line-height:1.75!important;color:#45433f!important;margin:0 0 25px!important}
+.about-page .agent-detail a{display:inline-block;border-bottom:1px solid #8c7860;padding-bottom:2px;margin-top:9px;font-weight:700}
