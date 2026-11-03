@@ -74,8 +74,8 @@ if (form) {
     const email = String(data.get('email') || '');
     const interest = String(data.get('interest') || '');
     const message = String(data.get('message') || '');
-    const subject = `L&A Construction inquiry: ${interest}`;
-    const body = `Name: ${name}\nEmail: ${email}\nProject: ${interest}\n\n${message}`;
+    const subject = `L&A Construction property inquiry: ${interest}`;
+    const body = `Name: ${name}\nEmail: ${email}\nInquiry type: ${interest}\n\n${message}`;
     const mailto = `mailto:${LA_SITE.businessEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     feedback.textContent = 'Opening your email application with a message addressed to Lea Sanciuc. Review the message and press Send in your email app.';
     window.location.href = mailto;
